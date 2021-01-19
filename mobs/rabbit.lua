@@ -101,7 +101,7 @@ minetest.register_entity("mobs_creatures:rabbit",{
 		if time_from_last_punch < .2 then return end --prevent jitterclicking 
 		mobkit.clear_queue_high(self)
 		mob_core.on_punch_basic(self, puncher, tool_capabilities, dir) --calls damage functions and flashes red
-		mob_core.hq_runfrom(self, 10, puncher)
+		mob_core.on_punch_runaway(self, puncher, false, true)
 	end,
 })
 
